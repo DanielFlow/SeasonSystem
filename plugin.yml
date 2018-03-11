@@ -1,0 +1,22 @@
+name: FourSeason
+author: DanielFlow
+version: 1.12.2
+main: de.fourseasons.server.SeasonSystem.SeasonSystem
+
+commands:
+  help:
+    aliases: [info, hilfe, h]
+  feed:
+    aliases: [eat, essen, food]
+  globalmute:
+    aliases: [chatmute, muteall, chatsperren]
+  pvp:
+    aliases: [globalgod, nopvp, grace]
+  wartung:
+    aliases: [maintenance, wartungen, whitelist]
+  team:
+    aliases: [staff, t, teamler, ask]
+  heal:
+    aliases: [heilen, heel, heilung, ih]
+  tpa:
+  tpaccept:
