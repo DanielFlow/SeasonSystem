@@ -20,3 +20,6 @@ commands:
     aliases: [heilen, heel, heilung, ih]
   tpa:
   tpaccept:
+  setspawn:
+  spawn:
+    aliases: [s, spawnpoint, sp]
