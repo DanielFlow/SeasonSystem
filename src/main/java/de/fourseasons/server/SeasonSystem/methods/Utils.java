@@ -15,10 +15,12 @@ import de.fourseasons.server.SeasonSystem.cmd.cmd_Globalmute;
 import de.fourseasons.server.SeasonSystem.cmd.cmd_Heal;
 import de.fourseasons.server.SeasonSystem.cmd.cmd_Help;
 import de.fourseasons.server.SeasonSystem.cmd.cmd_PvP;
+import de.fourseasons.server.SeasonSystem.cmd.cmd_Spawn;
 import de.fourseasons.server.SeasonSystem.cmd.cmd_Team;
 import de.fourseasons.server.SeasonSystem.cmd.cmd_Tpa;
 import de.fourseasons.server.SeasonSystem.cmd.cmd_Tpaccept;
 import de.fourseasons.server.SeasonSystem.cmd.cmd_Wartung;
+import de.fourseasons.server.SeasonSystem.cmd.cmd_setSpawn;
 import de.fourseasons.server.SeasonSystem.lst.lst_ChatEvent;
 import de.fourseasons.server.SeasonSystem.lst.lst_DamageEvent;
 import de.fourseasons.server.SeasonSystem.lst.lst_HelpTopic;
@@ -72,6 +74,8 @@ public class Utils {
 		SeasonSystem.getInstance().getCommand("heal").setExecutor(new cmd_Heal());
 		SeasonSystem.getInstance().getCommand("tpa").setExecutor(new cmd_Tpa());
 		SeasonSystem.getInstance().getCommand("tpaccept").setExecutor(new cmd_Tpaccept());
+		SeasonSystem.getInstance().getCommand("setspawn").setExecutor(new cmd_setSpawn());
+		SeasonSystem.getInstance().getCommand("spawn").setExecutor(new cmd_Spawn());
 
 
 		}
