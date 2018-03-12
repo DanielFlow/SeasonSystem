@@ -1,5 +1,7 @@
 package de.fourseasons.server.SeasonSystem.lst;
 
+import java.io.FileNotFoundException;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -8,6 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 import de.fourseasons.server.SeasonSystem.methods.ActionBar;
+import de.fourseasons.server.SeasonSystem.methods.LocationManager;
 import de.fourseasons.server.SeasonSystem.methods.Title;
 import de.fourseasons.server.SeasonSystem.methods.Utils;
 
@@ -19,6 +22,20 @@ public class lst_JoinEvent implements Listener{
 		if(p.hasPermission("season.staff")) {
 			Utils.onlinestaffplayers.add(p);
 		}
+		
+		try {
+			if(LocationManager.getLocation("world", "spawn") != null) {
+				p.teleport(LocationManager.getLocation("world", "spawn"));
+			} else {
+				p.sendMessage(Utils.prefix + "Es wurde leider noch kein " + ChatColor.GREEN + "" + ChatColor.BOLD + "Spawn " + ChatColor.GRAY + "gesetzt !");
+				p.sendMessage(ChatColor.GRAY + "Bitte benutze" + ChatColor.GREEN + "" + ChatColor.BOLD + "/setSpawn ");
+			}
+			
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		if(!p.hasPermission("season.join.msg")) {
 			e.setJoinMessage(null);
 			Title title = new Title(ChatColor.GREEN + "Four" + ChatColor.YELLOW + "Seasons"

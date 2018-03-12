@@ -7,6 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import de.fourseasons.server.SeasonSystem.methods.Utils;
+import net.md_5.bungee.api.ChatColor;
 
 public class cmd_Heal implements CommandExecutor{
 	
@@ -33,10 +34,10 @@ public class cmd_Heal implements CommandExecutor{
 				}	
 				feedcooldown.put(p.getName(), System.currentTimeMillis());	// Hier fügen wir den aktuellen Timestamp in die Hashmap ein
 				p.setHealth(20);
-				p.sendMessage(Utils.prefix + "Du wurdest "+ Utils.highlight +"geheilt!"+ Utils.color + ".");
+				p.sendMessage(Utils.prefix + "Du wurdest "+ ChatColor.GREEN + "" + ChatColor.BOLD +"geheilt!"+ Utils.color + ".");
 			} else {
 				p.setHealth(20);
-				p.sendMessage(Utils.prefix + "Du wurdest "+ Utils.highlight +"geheilt!"+ Utils.color + ".");
+				p.sendMessage(Utils.prefix + "Du wurdest "+ ChatColor.GREEN + "" + ChatColor.BOLD +"geheilt!"+ Utils.color + ".");
 			}
 	
 

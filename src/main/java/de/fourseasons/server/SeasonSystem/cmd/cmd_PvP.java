@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 
 import de.fourseasons.server.SeasonSystem.SeasonSystem;
 import de.fourseasons.server.SeasonSystem.methods.Utils;
+import net.md_5.bungee.api.ChatColor;
 
 public class cmd_PvP implements CommandExecutor{
 	
@@ -24,11 +25,11 @@ public class cmd_PvP implements CommandExecutor{
 		if(p.hasPermission("season.cmd.PvP")) {
 			
 				if(SeasonSystem.getInstance().getConfig().getBoolean("pvp")) {
-					Bukkit.broadcastMessage(Utils.prefix + "Der " + Utils.highlight + "PvP "+ Utils.color + "Modus wurde von " + Utils.highlight + p.getName() + Utils.color + " Deaktiviert.");
+					Bukkit.broadcastMessage(Utils.prefix + "Der " + ChatColor.GREEN + "" + ChatColor.BOLD + "PvP "+ Utils.color + "Modus wurde von " + ChatColor.GREEN + "" + ChatColor.BOLD + p.getName() + Utils.color + " Deaktiviert.");
 					SeasonSystem.getInstance().getConfig().set("pvp", false);
 					SeasonSystem.getInstance().saveConfig();
 				} else {
-					Bukkit.broadcastMessage(Utils.prefix + "Der " + Utils.highlight + "PvP "+ Utils.color + "Modus wurde von " + Utils.highlight + p.getName() + Utils.color + " Aktiviert.");
+					Bukkit.broadcastMessage(Utils.prefix + "Der " + ChatColor.GREEN + "" + ChatColor.BOLD + "PvP "+ Utils.color + "Modus wurde von " + ChatColor.GREEN + "" + ChatColor.BOLD + p.getName() + Utils.color + " Aktiviert.");
 					SeasonSystem.getInstance().getConfig().set("pvp", true);
 					SeasonSystem.getInstance().saveConfig();
 

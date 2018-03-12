@@ -24,11 +24,11 @@ public class cmd_Team implements CommandExecutor{
 		if(p.hasPermission("season.cmd.team")) {
 			
 				if(Utils.onlinestaffplayers.size() == 0 ) {
-					p.sendMessage(Utils.prefix + "Zurzeit sind leider keine " + ChatColor.GREEN + "Teammitglieder" + ChatColor.GRAY + " Online.");
+					p.sendMessage(Utils.prefix + "Zurzeit sind leider keine " + ChatColor.GREEN + "" + ChatColor.BOLD + "Teammitglieder" + ChatColor.GRAY + " Online.");
 				} else if(Utils.onlinestaffplayers.size() == 1) {
-					p.sendMessage(Utils.prefix + "Zurzeit ist " + ChatColor.GREEN + " nur Ein" + ChatColor.GRAY + " Teammitglied Online.");
+					p.sendMessage(Utils.prefix + "Zurzeit ist " + ChatColor.GREEN + "" + ChatColor.BOLD + " nur Ein" + ChatColor.GRAY + " Teammitglied Online.");
 				} else {
-					p.sendMessage(Utils.prefix + "Zurzeit sind " + ChatColor.GREEN + Utils.onlinestaffplayers.size() + ChatColor.GRAY + " Teammitglieder Online.");
+					p.sendMessage(Utils.prefix + "Zurzeit sind " + ChatColor.GREEN + "" + ChatColor.BOLD + Utils.onlinestaffplayers.size() + ChatColor.GRAY + " Teammitglieder Online.");
 				}
 				
 		} else {

@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 
 import de.fourseasons.server.SeasonSystem.SeasonSystem;
 import de.fourseasons.server.SeasonSystem.methods.Utils;
+import net.md_5.bungee.api.ChatColor;
 
 public class cmd_Globalmute implements CommandExecutor {
 	
@@ -24,12 +25,11 @@ public class cmd_Globalmute implements CommandExecutor {
 		if(p.hasPermission("season.cmd.globalmute")) {
 			
 				if(SeasonSystem.getInstance().getConfig().getBoolean("globalmute")) {
-					Bukkit.broadcastMessage(Utils.prefix + "Der " + Utils.highlight + "Globalmute "+ Utils.color + "Modus wurde von " + Utils.highlight + p.getName() + Utils.color + " deaktiviert.");
+					Bukkit.broadcastMessage(Utils.prefix + "Der " + ChatColor.GREEN + "" + ChatColor.BOLD + "Globalmute "+ Utils.color + "Modus wurde von " + ChatColor.GREEN + "" + ChatColor.BOLD + p.getName() + Utils.color + " deaktiviert.");
 					SeasonSystem.getInstance().getConfig().set("globalmute", false);
 					SeasonSystem.getInstance().saveConfig();
 				} else {
-					Bukkit.broadcastMessage(Utils.prefix + "Der " + Utils.highlight + "Globalmute "+ Utils.color + "Modus wurde von " + Utils.highlight + p.getName() + Utils.color + " aktiviert.");
-					SeasonSystem.getInstance().getConfig().set("globalmute", true);
+					Bukkit.broadcastMessage(Utils.prefix + "Der " + ChatColor.GREEN + "" + ChatColor.BOLD + "Globalmute "+ Utils.color + "Modus wurde von " + ChatColor.GREEN + "" + ChatColor.BOLD + p.getName() + Utils.color + " aktiviert.");					SeasonSystem.getInstance().getConfig().set("globalmute", true);
 					SeasonSystem.getInstance().saveConfig();
 
 				}

@@ -24,14 +24,14 @@ public class cmd_Wartung implements CommandExecutor {
 		if(p.hasPermission("season.cmd.wartung")) {
 			
 				if(SeasonSystem.getInstance().getConfig().getBoolean("wartungsmodus")) {
-					Bukkit.broadcastMessage(Utils.prefix + "Der " + Utils.highlight + "Wartungs "+ Utils.color + "Modus wurde von " + Utils.highlight + p.getName() + Utils.color + " Deaktiviert.");
+					Bukkit.broadcastMessage(Utils.prefix + "Der " + ChatColor.GREEN + "" + ChatColor.BOLD + "Wartungs "+ Utils.color + "Modus wurde von " + ChatColor.GREEN + "" + ChatColor.BOLD + p.getName() + Utils.color + " Deaktiviert.");
 					SeasonSystem.getInstance().getConfig().set("wartungsmodus", false);
 					SeasonSystem.getInstance().saveConfig();
 				} else {
-					Bukkit.broadcastMessage(Utils.prefix + "Der " + Utils.highlight + "Wartungs "+ Utils.color + "Modus wurde von " + Utils.highlight + p.getName() + Utils.color + " Aktiviert.");
+					Bukkit.broadcastMessage(Utils.prefix + "Der " + ChatColor.GREEN + "" + ChatColor.BOLD + "Wartungs "+ Utils.color + "Modus wurde von " + ChatColor.GREEN + "" + ChatColor.BOLD + p.getName() + Utils.color + " Aktiviert.");
 					for(Player all : Bukkit.getOnlinePlayers()) {
 						if(!all.hasPermission("season.join.wartung")) {
-							all.kickPlayer(ChatColor.BOLD.GREEN + "The FourSeasons Server" + "\n"
+							all.kickPlayer(ChatColor.GREEN + "" + ChatColor.BOLD + "The FourSeasons Server" + "\n"
 						+ ChatColor.RED + "Wir befinden uns Zurzeit in wartung"
 						+ "\n"
 						+ "\n"

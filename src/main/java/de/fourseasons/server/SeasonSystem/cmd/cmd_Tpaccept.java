@@ -28,15 +28,15 @@ public class cmd_Tpaccept implements CommandExecutor{
 			
 			if(args.length == 0) {
 				final Player target = Utils.tpa.get(p);
-				target.sendMessage(Utils.prefix + "Du wirst in 3 Sekunden zu " + ChatColor.GREEN + p.getName() + ChatColor.GRAY + " teleportiert.");
-				p.sendMessage(Utils.prefix + ChatColor.GREEN + target.getName() + " wird in 3 Sekunden zu dir teleportiert.");
+				target.sendMessage(Utils.prefix + "Du wirst in 3 Sekunden zu " + ChatColor.GREEN + "" + ChatColor.BOLD + p.getName() + ChatColor.GRAY + " teleportiert.");
+				p.sendMessage(Utils.prefix + ChatColor.GREEN + "" + ChatColor.BOLD + target.getName() + " wird in 3 Sekunden zu dir teleportiert.");
 
 				 new BukkitRunnable() {
 				        
 			            public void run() {
 			              target.teleport(p.getLocation());
-			              target.sendMessage(Utils.prefix + "Du wurdest zu " + ChatColor.GREEN + p.getName() + ChatColor.GRAY + "  Teleportiert");
-			              p.sendMessage(Utils.prefix + ChatColor.GREEN + p.getName() + ChatColor.GRAY + "  wurde zu dir Teleportiert");
+			              target.sendMessage(Utils.prefix + "Du wurdest zu " + ChatColor.GREEN + "" + ChatColor.BOLD + p.getName() + ChatColor.GRAY + "  Teleportiert");
+			              p.sendMessage(Utils.prefix + ChatColor.GREEN + "" + ChatColor.BOLD + p.getName() + ChatColor.GRAY + "  wurde zu dir Teleportiert");
 			            }
 			            
 			        }.runTaskLater(SeasonSystem.getInstance(), 60);

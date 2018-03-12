@@ -11,6 +11,7 @@ import org.bukkit.plugin.PluginManager;
 
 import de.fourseasons.server.SeasonSystem.SeasonSystem;
 import de.fourseasons.server.SeasonSystem.cmd.cmd_Feed;
+import de.fourseasons.server.SeasonSystem.cmd.cmd_Gamemodes;
 import de.fourseasons.server.SeasonSystem.cmd.cmd_Globalmute;
 import de.fourseasons.server.SeasonSystem.cmd.cmd_Heal;
 import de.fourseasons.server.SeasonSystem.cmd.cmd_Help;
@@ -41,25 +42,25 @@ public class Utils {
 	public static ChatColor highlight = ChatColor.GREEN;
 	public static ArrayList<Player> onlinestaffplayers = new ArrayList<Player>();
 	public static HashMap<Player, Player> tpa = new HashMap<Player, Player>();	
-	public static String prefix = ChatColor.GREEN + "Four" + ChatColor.YELLOW + "Seasons " + ChatColor.DARK_GRAY + " » " + color;
+	public static String prefix = ChatColor.GREEN + "" + ChatColor.BOLD + "Season" + ChatColor.DARK_GRAY + "" + ChatColor.BOLD + " » " + color;
 	
 	public static void err_no_permissions(Player p, String command, String Group) {
-		p.sendMessage(prefix + "Du benötigst die gruppe " + highlight + Group + color + " um den Command " + highlight + command + color + " zu benutzen!.");
+		p.sendMessage(prefix + "Du benötigst die gruppe " + ChatColor.GREEN + "" + ChatColor.BOLD + Group + color + " um den Command " + ChatColor.GREEN + "" + ChatColor.BOLD + command + color + " zu benutzen!.");
 		
 	}
 	
 	public static void err_musstbea_player(Player p, String command, String Group) {
-		p.sendMessage(prefix + "Du benötigst die gruppe " + highlight + Group + color + " um den Command " + highlight + command + color + " zu benutzen!.");
+		p.sendMessage(prefix + "Du benötigst die gruppe " + ChatColor.GREEN + "" + ChatColor.BOLD + Group + color + " um den Command " + ChatColor.GREEN + "" + ChatColor.BOLD + command + color + " zu benutzen!.");
 		
 	}
 	
 	public static void err_player_notfound(Player p, String args0) {
-		p.sendMessage(prefix + ChatColor.RED + "Der Spieler " + ChatColor.GREEN + args0 + ChatColor.RED + " ist nicht online!");
+		p.sendMessage(prefix + ChatColor.RED + "Der Spieler " + ChatColor.GREEN + "" + ChatColor.BOLD + args0 + ChatColor.RED + " ist nicht online!");
 		
 	}
 	
 	public static void err_invalid_syntax(Player p, String syntax) {
-		p.sendMessage(prefix + ChatColor.RED + "Bitte benutze: " + ChatColor.GREEN + syntax);
+		p.sendMessage(prefix + ChatColor.GRAY + "Bitte benutze: " + ChatColor.GREEN + "" + ChatColor.BOLD + syntax);
 		
 	}
 	
@@ -76,6 +77,8 @@ public class Utils {
 		SeasonSystem.getInstance().getCommand("tpaccept").setExecutor(new cmd_Tpaccept());
 		SeasonSystem.getInstance().getCommand("setspawn").setExecutor(new cmd_setSpawn());
 		SeasonSystem.getInstance().getCommand("spawn").setExecutor(new cmd_Spawn());
+		SeasonSystem.getInstance().getCommand("gamemode").setExecutor(new cmd_Gamemodes());
+
 
 
 		}
@@ -232,7 +235,7 @@ public class Utils {
 	
 	
 	public static void CommandCooldownMessage(Player p, long secondsLeft, String command) {
-		p.sendMessage(prefix + "Du musst noch " + highlight + secondsLeft + color + " Sekunden warten um den Command " + highlight + command + color + " zu benutzen.");
+		p.sendMessage(prefix + "Du musst noch " + ChatColor.GREEN + "" + ChatColor.BOLD + secondsLeft + color + " Sekunden warten um den Command " + ChatColor.GREEN + "" + ChatColor.BOLD + command + color + " zu benutzen.");
 		
 	}
 	

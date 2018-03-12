@@ -1,6 +1,6 @@
 name: FourSeason
 author: DanielFlow
-version: 1.12.2
+version: 1.3.2
 main: de.fourseasons.server.SeasonSystem.SeasonSystem
 
 commands:
@@ -23,3 +23,5 @@ commands:
   setspawn:
   spawn:
     aliases: [s, spawnpoint, sp]
+  gamemode:
+    aliases: [gm, gmode, changemode, changegm, switchmode]

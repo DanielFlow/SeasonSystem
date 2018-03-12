@@ -31,19 +31,19 @@ public class cmd_Spawn implements CommandExecutor{
 			if(p.hasPermission("season.bypass.cooldowns")) {
 				try {
 					p.teleport(LocationManager.getLocation("world", "spawn"));
-					p.sendMessage(Utils.prefix + "Du wurdest zum " + ChatColor.GREEN + " Spawn " + ChatColor.GRAY + "Teleportiert.");
+					p.sendMessage(Utils.prefix + "Du wurdest zum " + ChatColor.GREEN + "" + ChatColor.BOLD + " Spawn " + ChatColor.GRAY + "Teleportiert.");
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
 				}
 			} else {
-				p.sendMessage(Utils.prefix + "Du wirst in " + ChatColor.GREEN + " 3 Sekunden " + ChatColor.GRAY + "zum Spawn Teleportiert.");
+				p.sendMessage(Utils.prefix + "Du wirst in " + ChatColor.GREEN + "" + ChatColor.BOLD + " 3 Sekunden " + ChatColor.GRAY + "zum Spawn Teleportiert.");
 
 				new BukkitRunnable() {
 					
 		            public void run() {
 		            	try {
 							p.teleport(LocationManager.getLocation("world", "spawn"));
-							p.sendMessage(Utils.prefix + "Du wurdest zum " + ChatColor.GREEN + " Spawn " + ChatColor.GRAY + "Teleportiert.");
+							p.sendMessage(Utils.prefix + "Du wurdest zum " + ChatColor.GREEN + "" + ChatColor.BOLD + " Spawn " + ChatColor.GRAY + "Teleportiert.");
 						} catch (FileNotFoundException e) {
 							e.printStackTrace();
 						}

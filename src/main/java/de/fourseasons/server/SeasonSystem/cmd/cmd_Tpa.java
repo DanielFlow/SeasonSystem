@@ -31,8 +31,8 @@ public class cmd_Tpa implements CommandExecutor{
 					
 					Utils.tpa.put(target, p);
 					
-					target.sendMessage(Utils.prefix + ChatColor.GREEN + p.getName() + ChatColor.GRAY + " möchte sich Zu dir Teleportieren! " + ChatColor.GREEN +  " /Tpaccept " + ChatColor.GRAY + "?");
-					p.sendMessage(Utils.prefix + "Du hast " + ChatColor.GREEN + target.getName() + ChatColor.GRAY + " eine Tpa-Anfrage gesendet!.");
+					target.sendMessage(Utils.prefix + ChatColor.GREEN + "" + ChatColor.BOLD + p.getName() + ChatColor.GRAY + " möchte sich Zu dir Teleportieren! " + ChatColor.GREEN + "" + ChatColor.BOLD +  " /Tpaccept " + ChatColor.GRAY + "?");
+					p.sendMessage(Utils.prefix + "Du hast " + ChatColor.GREEN + "" + ChatColor.BOLD + target.getName() + ChatColor.GRAY + " eine Tpa-Anfrage gesendet!.");
 				} catch (Exception e) {
 					Utils.err_player_notfound(p, args[0]);
 				}

@@ -25,7 +25,7 @@ public class cmd_setSpawn implements CommandExecutor{
 			
 				try {
 					LocationManager.saveLocation(p.getLocation(), "spawn");
-					p.sendMessage(Utils.prefix + "Du hast den " + ChatColor.GREEN + "Spawn " + ChatColor.GRAY + "gesetzt!.");
+					p.sendMessage(Utils.prefix + "Du hast den " + ChatColor.GREEN + "" + ChatColor.BOLD + "Spawn " + ChatColor.GRAY + "gesetzt!.");
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

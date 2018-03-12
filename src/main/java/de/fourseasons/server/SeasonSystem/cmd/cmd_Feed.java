@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 
 import de.fourseasons.server.SeasonSystem.SeasonSystem;
 import de.fourseasons.server.SeasonSystem.methods.Utils;
+import net.md_5.bungee.api.ChatColor;
 
 public class cmd_Feed implements CommandExecutor{
 	
@@ -35,10 +36,10 @@ public class cmd_Feed implements CommandExecutor{
 				}	
 				feedcooldown.put(p.getName(), System.currentTimeMillis());	// Hier fügen wir den aktuellen Timestamp in die Hashmap ein
 				p.setFoodLevel(20);
-				p.sendMessage(Utils.prefix + "Du wurdest "+ Utils.highlight +"gefüttert!"+ Utils.color + ".");
+				p.sendMessage(Utils.prefix + "Du wurdest "+ ChatColor.GREEN + "" + ChatColor.BOLD +"gefüttert!"+ Utils.color + ".");
 			} else {
 				p.setFoodLevel(20);
-				p.sendMessage(Utils.prefix + "Du wurdest "+ Utils.highlight +"gefüttert!"+ Utils.color + ".");
+				p.sendMessage(Utils.prefix + "Du wurdest "+ ChatColor.GREEN + "" + ChatColor.BOLD +"gefüttert!"+ Utils.color + ".");
 			}
 	
 
